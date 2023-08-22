@@ -3,8 +3,9 @@ const colors = require("colors");
 const morgan = require("morgan");
 const dotenv = require("dotenv");
 
-// rest object
 const app = express();
+const port = process.env.PORT || 5000;
+dotenv.config();
 
 // middlewares
 app.use(express.json());
@@ -16,12 +17,6 @@ app.get("/", (req, res) => {
     message: "server is running",
   });
 });
-
-// dotenv congig
-dotenv.config();
-
-// port
-const port = process.env.PORT || 5000;
 
 // listen port
 app.listen(port, () => {
