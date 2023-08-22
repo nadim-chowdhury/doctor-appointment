@@ -2,10 +2,14 @@ const express = require("express");
 const colors = require("colors");
 const morgan = require("morgan");
 const dotenv = require("dotenv");
+const connectDB = require("./config/db");
 
 const app = express();
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 8080;
 dotenv.config();
+
+// mongodb connection
+connectDB();
 
 // middlewares
 app.use(express.json());
