@@ -22,6 +22,8 @@ app.get("/", (req, res) => {
   });
 });
 
+app.use("/api/v1/user", require("./routes/userRoutes"));
+
 // listen port
 app.listen(port, () => {
   console.log(`Server is running @ ${port} in ${process.env.NODE_MODE} mode`);
